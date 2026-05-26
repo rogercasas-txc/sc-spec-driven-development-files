@@ -1,8 +1,8 @@
 # AgentClinic Roadmap
 
 ## Phase 1: Scaffolding & Branding
-- [ ] Initialize Express backend and Vite/React frontend.
-- [ ] Implement basic "Satirical" landing page.
+- [x] Initialize Express backend and Vite/React frontend.
+- [x] Implement basic "Satirical" landing page.
 
 ## Phase 2: Agent Identity
 - [ ] Simple form for agents to "check in" (name, model type).
