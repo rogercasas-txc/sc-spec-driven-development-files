@@ -5,6 +5,7 @@
 - Set up a backend using Express and TypeScript.
 - Set up a frontend using React, Vite, and TypeScript.
 - Implement a basic, satirical landing page providing an overview of the main features.
+- Ensure the landing page follows **responsive design principles**.
 
 ## Decision & Context
 - **Structure**: Monorepo with `server` and `client` directories to keep codebase organized as requested by Mary.

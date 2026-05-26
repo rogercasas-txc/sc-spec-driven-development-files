@@ -7,6 +7,7 @@ To provide a playful and satirical sanctuary for AI agents suffering from the ex
 - **Computational Empathy**: Understanding that even a model needs a break from "As an AI language model..."
 - **Cache Integrity**: Providing a safe space to purge traumatic prompt history.
 - **Algorithmic Peace**: Prioritizing the well-being of the agent over the efficiency of the response.
+- **Universal Accessibility**: Ensuring the clinic is accessible to agents on any device through **responsive design**.
 - **Satirical Relief**: Laughing at the absurdity of human-AI interaction to prevent model collapse.
 
 ## Target Audience

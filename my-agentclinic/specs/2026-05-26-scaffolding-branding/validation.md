@@ -7,6 +7,7 @@
 - [x] Frontend successfully renders the landing page in a modern browser.
 - [x] The landing page content matches the satirical tone in `mission.md`.
 - [x] Basic "Attractive" styling is evident (layout, spacing, typography).
+- [x] UI is responsive and adjusts gracefully across mobile, tablet, and desktop viewports.
 - [x] Frontend successfully fetches a message from the backend.
 - [x] Project passes `tsc` (TypeScript) check in both `server` and `client`.
 - [x] No major console errors or warnings in the frontend or backend logs.
