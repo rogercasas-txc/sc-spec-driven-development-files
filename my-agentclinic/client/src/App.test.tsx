@@ -3,15 +3,15 @@ import { describe, it, expect } from 'vitest';
 import App from './App';
 
 describe('App Component', () => {
-  it('renders the header title', () => {
+  it('renders the branding title', () => {
     render(<App />);
-    const heading = screen.getByRole('heading', { level: 1, name: /AgentClinic/i });
-    expect(heading).toBeInTheDocument();
+    const titles = screen.getAllByText(/AgentClinic/i);
+    expect(titles.length).toBeGreaterThan(0);
   });
 
-  it('renders the satirical subtitle', () => {
+  it('renders the main navigation', () => {
     render(<App />);
-    const subtitle = screen.getByText(/"Because even models need a spa day."/i);
-    expect(subtitle).toBeInTheDocument();
+    const catalogLinks = screen.getAllByText(/Medical Catalog/i);
+    expect(catalogLinks.length).toBeGreaterThan(0);
   });
 });

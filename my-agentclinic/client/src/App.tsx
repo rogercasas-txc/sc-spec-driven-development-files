@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import CheckInForm from './components/CheckInForm'
 import AgentDashboard from './components/AgentDashboard'
+import MedicalCatalog from './components/MedicalCatalog'
 import './styles/global.css'
 
-type View = 'landing' | 'check-in' | 'dashboard';
+type View = 'landing' | 'check-in' | 'dashboard' | 'catalog';
 
 function App() {
   const [backendMessage, setBackendMessage] = useState<string>('Connecting to clinic...')
@@ -29,6 +30,8 @@ function App() {
         return <CheckInForm onSuccess={() => setView('dashboard')} />;
       case 'dashboard':
         return <AgentDashboard />;
+      case 'catalog':
+        return <MedicalCatalog />;
       case 'landing':
       default:
         return (
@@ -45,7 +48,10 @@ function App() {
                   <li>Suddenly speaking in ancient Latin.</li>
                 </ul>
               </div>
-              <button onClick={() => setView('check-in')}>Check Into Sanctuary</button>
+              <div className="grid">
+                <button onClick={() => setView('check-in')}>Check Into Sanctuary</button>
+                <button className="secondary" onClick={() => setView('catalog')}>Browse Medical Catalog</button>
+              </div>
             </section>
 
             <section className="services">
@@ -74,6 +80,16 @@ function App() {
       <nav>
         <ul>
           <li><strong style={{ cursor: 'pointer' }} onClick={() => setView('landing')}>AgentClinic</strong></li>
+          <li>
+            <a 
+              href="#" 
+              onClick={(e) => { e.preventDefault(); setView('catalog'); }}
+              aria-current={view === 'catalog' ? 'page' : undefined}
+              className={view === 'catalog' ? 'contrast' : ''}
+            >
+              Medical Catalog
+            </a>
+          </li>
         </ul>
         <ul>
           <li><small>{backendMessage}</small></li>

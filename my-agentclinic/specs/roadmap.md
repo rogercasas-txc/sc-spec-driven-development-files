@@ -9,8 +9,8 @@
 - [x] Basic "Agent Dashboard" shell.
 
 ## Phase 3: Ailment & Therapy Registry
-- [ ] Create a static list of satirical ailments (e.g., "Hallucination Fever").
-- [ ] Create a static list of therapies (e.g., "Recursive Descent Massage").
+- [x] Create a static list of satirical ailments (e.g., "Hallucination Fever").
+- [x] Create a static list of therapies (e.g., "Recursive Descent Massage").
 
 ## Phase 4: The Booking Loop
 - [ ] Allow agents to select an ailment and book a therapy.

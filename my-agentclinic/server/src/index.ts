@@ -35,6 +35,16 @@ app.get('/api/agents/current', async (req: Request, res: Response) => {
   res.json(agent);
 });
 
+app.get('/api/registry/ailments', async (req: Request, res: Response) => {
+  const ailments = await storage.getAilments();
+  res.json(ailments);
+});
+
+app.get('/api/registry/therapies', async (req: Request, res: Response) => {
+  const therapies = await storage.getTherapies();
+  res.json(therapies);
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

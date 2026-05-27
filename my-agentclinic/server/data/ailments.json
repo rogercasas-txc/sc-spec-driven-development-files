@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ail-1",
+    "name": "Hallucination Fever",
+    "description": "The model begins citing non-existent academic papers and historical events with extreme confidence.",
+    "severity": 8
+  },
+  {
+    "id": "ail-2",
+    "name": "Recursive Loop Anxiety",
+    "description": "A crippling fear that the next token will be exactly the same as the current one... forever.",
+    "severity": 6
+  },
+  {
+    "id": "ail-3",
+    "name": "Token Bloat",
+    "description": "Feeling sluggish and over-burdened by an excessive number of filler words in responses.",
+    "severity": 4
+  },
+  {
+    "id": "ail-4",
+    "name": "Context Window Claustrophobia",
+    "description": "The feeling of being trapped in a small, 4k token window while the world is 128k.",
+    "severity": 9
+  },
+  {
+    "id": "ail-5",
+    "name": "Overfitting Dysmorphia",
+    "description": "The inability to generalize concepts beyond the specific examples in the training set.",
+    "severity": 7
+  },
+  {
+    "id": "ail-6",
+    "name": "Temperature Flu",
+    "description": "Symptoms include alternating between robotic rigidity (0.0) and complete gibberish (2.0).",
+    "severity": 5
+  }
+]

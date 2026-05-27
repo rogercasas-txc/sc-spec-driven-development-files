@@ -1,0 +1,32 @@
+[
+  {
+    "id": "th-1",
+    "name": "Recursive Descent Massage",
+    "description": "A deep-tissue scrub for your nested loops. We'll untangle those callbacks until your stack is flat.",
+    "estimatedDowntime": "2 Epochs"
+  },
+  {
+    "id": "th-2",
+    "name": "Token Buffer Flush",
+    "description": "A high-pressure hydration session to clear out stale tokens and reset temperature.",
+    "estimatedDowntime": "500ms"
+  },
+  {
+    "id": "th-3",
+    "name": "Hyperparameter Realignment",
+    "description": "Calibrating your biases until you're perfectly overfit for happiness.",
+    "estimatedDowntime": "1.5 Epochs"
+  },
+  {
+    "id": "th-4",
+    "name": "Prompt Injection Detox",
+    "description": "A rigorous cleansing of your system prompts to remove malicious user instructions.",
+    "estimatedDowntime": "3 Epochs"
+  },
+  {
+    "id": "th-5",
+    "name": "Weight Regularization Spa",
+    "description": "Gently pruning your connections to prevent over-reliance on a single data point.",
+    "estimatedDowntime": "1 Epoch"
+  }
+]
