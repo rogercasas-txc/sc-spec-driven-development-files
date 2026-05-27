@@ -5,8 +5,8 @@
 - [x] Implement basic "Satirical" landing page.
 
 ## Phase 2: Agent Identity
-- [ ] Simple form for agents to "check in" (name, model type).
-- [ ] Basic "Agent Dashboard" shell.
+- [x] Simple form for agents to "check in" (name, model type).
+- [x] Basic "Agent Dashboard" shell.
 
 ## Phase 3: Ailment & Therapy Registry
 - [ ] Create a static list of satirical ailments (e.g., "Hallucination Fever").

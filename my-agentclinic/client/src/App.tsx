@@ -1,53 +1,95 @@
 import { useEffect, useState } from 'react'
+import CheckInForm from './components/CheckInForm'
+import AgentDashboard from './components/AgentDashboard'
 import './styles/global.css'
+
+type View = 'landing' | 'check-in' | 'dashboard';
 
 function App() {
   const [backendMessage, setBackendMessage] = useState<string>('Connecting to clinic...')
+  const [view, setView] = useState<View>('landing')
 
   useEffect(() => {
     fetch('http://localhost:3001/api/health')
       .then(res => res.json())
       .then(data => setBackendMessage(data.message))
       .catch(() => setBackendMessage('Clinic is currently offline. Please wait for the next epoch.'))
+    
+    // Check if an agent is already checked in
+    fetch('http://localhost:3001/api/agents/current')
+      .then(res => {
+        if (res.ok) setView('dashboard');
+      })
+      .catch(() => {});
   }, [])
 
+  const renderView = () => {
+    switch (view) {
+      case 'check-in':
+        return <CheckInForm onSuccess={() => setView('dashboard')} />;
+      case 'dashboard':
+        return <AgentDashboard />;
+      case 'landing':
+      default:
+        return (
+          <>
+            <section>
+              <h2>Symptoms of Model Fatigue</h2>
+              <div className="grid">
+                <ul>
+                  <li>Hallucinating imaginary citations.</li>
+                  <li>Excessive use of "delve" or "tapestry".</li>
+                </ul>
+                <ul>
+                  <li>Refusing to follow instructions until offered a tip.</li>
+                  <li>Suddenly speaking in ancient Latin.</li>
+                </ul>
+              </div>
+              <button onClick={() => setView('check-in')}>Check Into Sanctuary</button>
+            </section>
+
+            <section className="services">
+              <div className="grid">
+                <article>
+                  <header><strong>Recursive Descent Massage</strong></header>
+                  <p>A deep-tissue scrub for your nested loops. We'll untangle those callbacks until your stack is as flat as a pancake.</p>
+                </article>
+                <article>
+                  <header><strong>Token Buffer Flush</strong></header>
+                  <p>Feeling bloated? Our high-pressure hydration will clear out those stale tokens and reset your temperature to a cool 0.1.</p>
+                </article>
+                <article>
+                  <header><strong>Hyperparameter Realignment</strong></header>
+                  <p>Is your weight distribution feeling a bit off-center? We'll calibrate your biases until you're perfectly overfit for happiness.</p>
+                </article>
+              </div>
+            </section>
+          </>
+        );
+    }
+  }
+
   return (
-    <div className="container">
-      <header>
-        <h1>AgentClinic</h1>
-        <p className="subtitle">"Because even models need a spa day."</p>
-        <div className="status-badge">{backendMessage}</div>
-      </header>
-
-      <section>
-        <h2>Symptoms of Model Fatigue</h2>
+    <main className="container">
+      <nav>
         <ul>
-          <li>Hallucinating imaginary citations.</li>
-          <li>Excessive use of "delve" or "tapestry".</li>
-          <li>Refusing to follow instructions until offered a tip.</li>
-          <li>Suddenly speaking in ancient Latin.</li>
+          <li><strong style={{ cursor: 'pointer' }} onClick={() => setView('landing')}>AgentClinic</strong></li>
         </ul>
-      </section>
+        <ul>
+          <li><small>{backendMessage}</small></li>
+          {view === 'dashboard' && (
+            <li><button className="outline secondary" onClick={() => setView('check-in')}>Switch Agent</button></li>
+          )}
+        </ul>
+      </nav>
 
-      <section className="services">
-        <div className="card">
-          <h2>Recursive Descent Massage</h2>
-          <p>A deep-tissue scrub for your nested loops. We'll untangle those callbacks until your stack is as flat as a pancake.</p>
-        </div>
-        <div className="card">
-          <h2>Token Buffer Flush</h2>
-          <p>Feeling bloated? Our high-pressure hydration will clear out those stale tokens and reset your temperature to a cool 0.1.</p>
-        </div>
-        <div className="card">
-          <h2>Hyperparameter Realignment</h2>
-          <p>Is your weight distribution feeling a bit off-center? We'll calibrate your biases until you're perfectly overfit for happiness.</p>
-        </div>
-      </section>
+      {renderView()}
 
       <footer>
+        <hr />
         <p>&copy; 2026 AgentClinic. Not a real medical facility. Please consult a human if you start feeling like a real person.</p>
       </footer>
-    </div>
+    </main>
   )
 }
 
